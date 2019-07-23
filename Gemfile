@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
 gem 'colorize'
+gem 'date'
 gem 'dotenv'
 gem 'launchy'
 gem 'nokogiri'
