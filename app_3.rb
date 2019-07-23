@@ -29,9 +29,8 @@ sleep(1)
 puts "Qulbutoké : Qulbuutokééé !"
 sleep(1)
 puts "-"*50
-puts "|#{"LA TEAM ROCKET ATTAQUE !".ljust(48)}|"
-puts "|#{"Utilise ton Pikachu pour défaire la Team Rocket!".ljust(48)}|"
-sleep(1)
+puts "|#{"LA TEAM ROCKET ATTAQUE !".center(48)}|"
+puts "|#{"Utilise ton Pikachu pour défaire la Team Rocket!".center(48)}|"
 puts "-"*50 + "\n\n"
 puts "⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⣠⣤⣶⣶
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⢰⣿⣿⣿⣿

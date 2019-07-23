@@ -1,4 +1,5 @@
-require 'pry'
+require 'bundler'
+Bundler.require
 
 class Game
   attr_accessor :human_player, :enemies
@@ -42,6 +43,7 @@ class Game
     elsif user_input == 's'
       @human_player.search_health_pack
     else
+      puts "PIKACHU ATTAQUE ECLAIR!!!"
       @human_player.attacks(@enemies[user_input.to_i])
       if @enemies[user_input.to_i].life_points == 0
         kill_player(@enemies[user_input.to_i])
@@ -73,6 +75,7 @@ class Game
       print "> "
       user_input = gets.chomp
     end
+    puts "-"*50
     puts "\n"
     user_input
   end
