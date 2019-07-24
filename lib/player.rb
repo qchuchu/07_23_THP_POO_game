@@ -17,11 +17,11 @@ class Player
 
   def gets_damage(int)
     @life_points = [@life_points - int, 0].max
-    puts "Le joueur #{@name} a été tué !" if @life_points == 0
+    puts "#{@name} a été tué !" if @life_points == 0
   end
 
   def attacks(player_attacked)
-    puts "Le joueur #{@name} attaque le joueur #{player_attacked.name}"
+    puts "#{@name} attaque #{player_attacked.name}"
     dmg = compute_damage
     puts "Le joueur inflige #{dmg} points de dommages"
     player_attacked.gets_damage(dmg)
@@ -42,7 +42,7 @@ class HumanPlayer < Player
   end
 
   def show_state
-    str = "#{@name} a #{@life_points} points de vie et une arme de niveau #{@weapon_level}"
+    str = "#{@name} a #{@life_points} points de vie et un pokemon de niveau #{@weapon_level}"
     if @life_points > 0
       puts str.colorize(:green)
     else
@@ -56,25 +56,25 @@ class HumanPlayer < Player
 
   def search_weapon
     level = rand(1..6)
-    puts "Tu as trouvé une arme de niveau #{level}"
+    puts "Tu as trouvé un pokemon de niveau #{level}"
     if level > @weapon_level
-      puts "Youhou ! elle est meilleure que ton arme actuelle : tu la prends"
+      puts "Youhou ! il est meilleur que ton pokemon actuel : PIKACHU JE TE CHOISIS!"
       @weapon_level = level
     else
-      puts "M@*#$... elle n'est pas mieux que ton arme actuelle..."
+      puts "M@*#$... C'est un Rattata tout pourri..."
     end
   end
 
   def search_health_pack
-    puts "On part à la recherche d'un Health Pack !"
+    puts "On part à la recherche d'une Potion !"
     level = rand(1..6)
     if level == 1
       puts "Tu n'as rien trouvé..."
     elsif (2..5).include? level
-      puts "Bravo, tu as trouvé un pack de +50 points de vie !"
+      puts "Bravo, tu as trouvé une Super Potion ! +50 points de vie !"
       @life_points = [100, @life_points + 50].min
     else
-      puts "Waow, tu as trouvé un pack de +80 points de vie !"
+      puts "Waow, tu as trouvé une Hyper Potion ! +80 points de vie !"
       @life_points = [100, @life_points + 80].min
     end
   end

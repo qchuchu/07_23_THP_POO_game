@@ -46,16 +46,31 @@ puts "⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀�
 ⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿"
 
+pokemons = [
+  'Miaouss',
+  'Smogo' ,
+  'Abo',
+  'Excelangue',
+  'Qulbutoké',
+  'Smogogo',
+  'Arbok',
+  'Empiflor',
+  'Magicarpe',
+  'Mr. Mime'
+]
+
 puts "\nQuel est ton prénom, jeune dresseur?"
 print "> "
 name = gets.chomp
+print "\n"
 
-game = Game.new(name)
+game = Game.new(name, pokemons)
 
 while game.is_still_ongoing?
+  game.new_players_in_sight
   game.show_players
   game.menu
-  game.menu_choice(game.ask_input)
+  game.menu_choice(game.action_input)
   game.ennemies_attack
 end
 
